@@ -66,7 +66,7 @@ class CosineSimilarity(object) :
 
 class CosineTextSimilarity(CosineSimilarity) :
     def _list(self, document) :
-        return document.split()
+        return jieba.lcut(document)
 
     def _hashable(self, document):
         return document
