@@ -1,4 +1,5 @@
 import math
+import jieba
 
 class CosineSimilarity(object) :
 
@@ -73,7 +74,7 @@ class CosineTextSimilarity(CosineSimilarity) :
 class CosineSetSimilarity(CosineSimilarity) :
 
     def _list(self, document) :
-        return document
+        return jieba.lcut(document)
 
     def _hashable(self, document):
         return tuple(document)
